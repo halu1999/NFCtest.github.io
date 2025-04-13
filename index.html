@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="manifest" href="manifest.json" />
     <title>读取NFC内容</title>
-    <script>if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-            navigator.serviceWorker.register('/sw.js', {scope: '/'})
-                .then(function (registration) {
-                    // 注册成功
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                })
-                .catch(function (err) {
-                    // 注册失败:
-                    console.log('ServiceWorker registration failed: ', err);
-                });
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/sw.js", { scope: "/" })
+            .then(function (registration) {
+              // 注册成功
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+            })
+            .catch(function (err) {
+              // 注册失败:
+              console.log("ServiceWorker registration failed: ", err);
+            });
         });
-    }</script>
-</head>
-<body>
+      }
+    </script>
+  </head>
+  <body>
     <h1>读取NFC内容</h1>
     <button id="readNfcButton">点击读取NFC</button>
     <button id="clearContentButton">清除内容</button>
     <div id="nfcContent">这里将显示NFC内容</div>
-    <button id="pwaBtn">点击安装到桌面</button>
 
     <script src="nfc.js"></script>
-
-</body>
+  </body>
 </html>
