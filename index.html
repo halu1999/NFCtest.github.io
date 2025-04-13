@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="manifest" href="manifest.json" />
+    <script src="sw.js"></script>
     <title>读取NFC内容</title>
     <script>
       if ("serviceWorker" in navigator) {
@@ -30,7 +31,7 @@
     <button id="readNfcButton">点击读取NFC</button>
     <button id="clearContentButton">清除内容</button>
     <div id="nfcContent">这里将显示NFC内容</div>
-
+    <button id="btn">安装应用</button>
     <script src="nfc.js"></script>
   </body>
 </html>
