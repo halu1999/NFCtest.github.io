@@ -34,31 +34,31 @@ clearContentButton.addEventListener('click', () => {
 });
 
 
-// 获取按钮元素
-let button = document.getElementById('btn')
-// 保存安装提示事件
-let savedPrompt
-window.addEventListener('beforeinstallprompt', function (e) {
-  // 阻止默认提示弹出
-  e.preventDefault()
-  // 把事件存起来
-  savedPrompt = e
-  // 显示按钮
-  button.classList.remove('disabled')
-})
-button.addEventListener('click', function () {
-  // 隐藏按钮
-  button.classList.add('disabled')
-  // 触发安装提示展现
-  savedPrompt.prompt()
-  // 用户行为判断
-  savedPrompt.userChoice.then(function (result) {
-    // 用户操作之后清空事件
-    savedPrompt = null
-    if (result.outcome === 'accept') {
-      // 用户将站点添加到桌面
-    } else {
-      // 用户取消操作
-    }
-  })
-})
+// // 获取按钮元素
+// let button = document.getElementById('btn')
+// // 保存安装提示事件
+// let savedPrompt
+// window.addEventListener('beforeinstallprompt', function (e) {
+//   // 阻止默认提示弹出
+//   e.preventDefault()
+//   // 把事件存起来
+//   savedPrompt = e
+//   // 显示按钮
+//   button.classList.remove('disabled')
+// })
+// button.addEventListener('click', function () {
+//   // 隐藏按钮
+//   button.classList.add('disabled')
+//   // 触发安装提示展现
+//   savedPrompt.prompt()
+//   // 用户行为判断
+//   savedPrompt.userChoice.then(function (result) {
+//     // 用户操作之后清空事件
+//     savedPrompt = null
+//     if (result.outcome === 'accept') {
+//       // 用户将站点添加到桌面
+//     } else {
+//       // 用户取消操作
+//     }
+//   })
+// })
